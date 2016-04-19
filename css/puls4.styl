@@ -1,5 +1,10 @@
-gris_oscuro = #444
+gris_oscuro = #555
 azul = #22BCE0
+naranja = #DD4F24
+gris_texto = #7A7A7A
+
+a
+	color naranja
 
 body
 	background #E8E8E8
@@ -9,15 +14,40 @@ body
 header
 	background gris_oscuro
 	color white
+	overflow hidden
 	padding 0.5em
+	position relative
+	padding 10px
+	box-shadow 0 5px 0 rgba(0,0,0,0.2)
+	z-index 1
+	
 	.logo
 		border-right 1px solid azul
 		width 60px
+		float left
 		
 		img
 			width 52px 
 	.titular
-		margin 0 80px 0 70px
+		margin 0 65px 0 70px
+		
+		.filtro 
+			color azul
+			font-size 14px	
+			font-weight bold
+			font-style italic
+			text-decoration none
+			
+		.publicar
+			background naranja
+			color white
+			float right
+			font-style italic
+			margin -5px 1em 0 0
+			padding 0.2em 0.5em
+			text-decoration none
+			text-shadow 1px 1px 0px black
+
 		.titulo
 			font-size 18px
 			font-weight normal
@@ -25,15 +55,103 @@ header
 			padding 0
 	
 	.usuario
+		position absolute
+		top 10px
+		right 10px
+		
 		.avatar
-			img
-				width 50px
+			position relative
+			margin 0 1em 0 0
+			z-index 2
+			img							
 				border-radius 50%
+				width 50px
+				
+		.flechita
+			background naranja
+			color white
+			display block			
+			padding 3px
+			position absolute			
+			right 0
+			top 15px
+			text-align right
+			width 50%
+			z-index 0			
 nav
 	background azul
+	border-left 15px solid white
+	position relative
 	
-.left
-	float left
+	&:before
+		border-bottom 20px solid transparent
+		border-left 7px solid white
+		border-top 20px solid transparent
+		content ""
+		left 0
+		position absolute
+		top 0
+
+	.menu
+		height 40px
+		line-height 40px
+		margin 0
+		padding 0
+		overflow-x auto
+		white-space nowrap
+
+		li
+			display inline-block
+			a
+				color white
+				display block
+				margin 0 0.5em
+				padding 0 0.2em
+				text-decoration none
+				
+.posts
+	padding 0.5em
 	
-.right
-	float right
+	.post
+		background white
+		border-radius 0 0 0.5em 0.5em		
+		box-shadow 2px 2px 10px rgba(black,0.5)
+		color gris_texto
+		margin-bottom 0.5em
+		
+		.acciones
+			border-top 3px solid azul
+			padding 0.5em
+			overflow hidden
+			.datos
+				float right
+		
+		.descripcion
+					
+			.detalles
+				height 160px
+				margin-left 130px
+				
+				.autor
+					margin 0.5em 0 2em 0
+					
+				.titulo
+					color gris_oscuro
+					font-size 1.1em
+					font-style italic
+					margin 0
+					padding 0.5em 0.5em 0 0
+					
+			.imagen 			
+				float left				
+				img
+					height 160px
+					vertical-align top
+					width 160px
+					
+
+
+
+
+
+							
